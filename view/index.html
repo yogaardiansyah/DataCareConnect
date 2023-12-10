@@ -1,0 +1,64 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <form id="formRekamMedis">
+            <h2>Informasi Identitas Pasien</h2>
+            <label for="namaPasien">Nama Lengkap:</label>
+            <input type="text" id="namaPasien" name="namaPasien" >
+        
+            <label for="tanggalLahir">Tanggal Lahir:</label>
+            <input type="date" id="tanggalLahir" name="tanggalLahir" >
+        
+            <label for="jenisKelamin">Jenis Kelamin:</label>
+            <select id="jenisKelamin" name="jenisKelamin" >
+                <option value="laki">Laki-laki</option>
+                <option value="perempuan">Perempuan</option>
+            </select>
+        
+            <h2>Riwayat Kesehatan</h2>
+            <label for="riwayatPenyakit">Riwayat Penyakit Utama:</label>
+            <textarea id="riwayatPenyakit" name="riwayatPenyakit" rows="4" cols="50"></textarea>
+        
+            <label for="alergi">Alergi Obat atau Makanan:</label>
+            <textarea id="alergi" name="alergi" rows="4" cols="50"></textarea>
+        
+            <h2>Catatan Kunjungan dan Diagnosa</h2>
+            <label for="tanggalKunjungan">Tanggal Kunjungan:</label>
+            <input type="date" id="tanggalKunjungan" name="tanggalKunjungan" >
+        
+            <label for="diagnosa">Diagnosa Singkat:</label>
+            <textarea id="diagnosa" name="diagnosa" rows="4" cols="50"></textarea>
+        
+            <label for="resepObat">Resep Obat:</label>
+            <textarea id="resepObat" name="resepObat" rows="4" cols="50"></textarea>
+        
+            <button type="submit">Simpan</button>
+        </form>
+        
+        <script>
+            document.getElementById("formRekamMedis").addEventListener("submit", function(event) {
+                event.preventDefault();
+        
+                // Mengumpulkan data dari formulir
+                var formData = {
+                    namaPasien: document.getElementById("namaPasien").value,
+                    tanggalLahir: document.getElementById("tanggalLahir").value,
+                    jenisKelamin: document.getElementById("jenisKelamin").value,
+                    riwayatPenyakit: document.getElementById("riwayatPenyakit").value,
+                    alergi: document.getElementById("alergi").value,
+                    tanggalKunjungan: document.getElementById("tanggalKunjungan").value,
+                    diagnosa: document.getElementById("diagnosa").value,
+                    resepObat: document.getElementById("resepObat").value
+                };
+        
+                // Menampilkan data di konsol (bisa diubah sesuai kebutuhan)
+                console.log(formData);
+            });
+        </script>
+    </body>
+    </html>
